@@ -1,0 +1,23 @@
+{
+  "name": "betalabs/engine-workflow-helper",
+  "description": "Package providing helpers for Engine Workflow creation",
+  "keywords": ["api", "laravel", "rest", "workflow", "engine"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Betalabs Tecnologia LTDA.",
+      "email": "betalabs@betalabs.com.br"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.3",
+    "betalabs/engine-phpsdk": "^0.5.1",
+    "laravel/framework": "5.6.*",
+    "myclabs/php-enum": "^1.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Betalabs\\EngineWorkflowHelper\\": "src/"
+    }
+  }
+}

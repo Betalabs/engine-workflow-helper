@@ -63,6 +63,14 @@ abstract class WorkflowSender
         $this->eventIndexer = $eventIndexer;
         $this->listenerIndexer = $listenerIndexer;
         $this->workflowUpdater = $workflowUpdater;
+    }
+
+    /**
+     * Set Workflow events and listeners
+     *
+     */
+    protected function setUp()
+    {
         $this->setEvent();
         $this->setListener();
     }

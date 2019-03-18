@@ -39,23 +39,6 @@ class Creator extends AbstractCreator
     private $params = [];
 
     /**
-     * Creator constructor.
-     *
-     * @param int $workflowId
-     * @param int $listenerId
-     * @param string $approach
-     */
-    public function __construct(
-        int $workflowId,
-        int $listenerId,
-        string $approach
-    ) {
-        $this->workflowId = $workflowId;
-        $this->listenerId = $listenerId;
-        $this->approach = $approach;
-    }
-
-    /**
      * Set the workflowId property.
      *
      * @param int $workflowId
@@ -115,6 +98,16 @@ class Creator extends AbstractCreator
     {
         $this->xPosition = $x;
         $this->yPosition = $y;
+        return $this;
+    }
+
+    /**
+     * @param string $approach
+     * @return Creator
+     */
+    public function setApproach(string $approach): Creator
+    {
+        $this->approach = $approach;
         return $this;
     }
 

@@ -34,29 +34,6 @@ class Creator extends AbstractCreator
     private $approach;
 
     /**
-     * Creator constructor.
-     *
-     * @param int $workflowId
-     * @param int $engineEventParamId
-     * @param string $value
-     * @param WorkflowConditionOperator $operator
-     * @param WorkflowConditionApproach $approach
-     */
-    public function __construct(
-        int $workflowId,
-        int $engineEventParamId,
-        string $value,
-        WorkflowConditionOperator $operator,
-        WorkflowConditionApproach $approach
-    ) {
-        $this->workflowId = $workflowId;
-        $this->engineEventParamId = $engineEventParamId;
-        $this->value = $value;
-        $this->operator = $operator;
-        $this->approach = $approach;
-    }
-
-    /**
      * Set the workflowId property.
      *
      * @param int $workflowId
@@ -98,11 +75,11 @@ class Creator extends AbstractCreator
     /**
      * Set the operator property.
      *
-     * @param WorkflowConditionOperator $operator
+     * @param string $operator
      *
      * @return Creator
      */
-    public function setOperator(WorkflowConditionOperator $operator): Creator
+    public function setOperator(string $operator): Creator
     {
         $this->operator = $operator;
         return $this;
@@ -111,11 +88,11 @@ class Creator extends AbstractCreator
     /**
      * Set the approach property.
      *
-     * @param WorkflowConditionApproach $approach
+     * @param string $approach
      *
      * @return Creator
      */
-    public function setApproach(WorkflowConditionApproach $approach): Creator
+    public function setApproach(string $approach): Creator
     {
         $this->approach = $approach;
         return $this;
@@ -141,8 +118,8 @@ class Creator extends AbstractCreator
         return [
             'engine_event_param_id' => $this->engineEventParamId,
             'value' => $this->value,
-            'operator' => $this->operator->getValue(),
-            'approach' => $this->approach->getValue(),
+            'operator' => $this->operator,
+            'approach' => $this->approach,
         ];
     }
 }

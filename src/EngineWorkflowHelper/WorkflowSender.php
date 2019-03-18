@@ -5,6 +5,9 @@ namespace Betalabs\EngineWorkflowHelper;
 use Betalabs\EngineWorkflowHelper\Event\Indexer as EventIndexer;
 use Betalabs\EngineWorkflowHelper\Listener\Indexer as ListenerIndexer;
 use Betalabs\EngineWorkflowHelper\Workflow\Updater as WorkflowUpdater;
+use Betalabs\EngineWorkflowHelper\Workflow\Creator as WorkflowCreator;
+use Betalabs\EngineWorkflowHelper\Workflow\Condition\Creator as ConditionCreator;
+use Betalabs\EngineWorkflowHelper\Workflow\Step\Creator as StepCreator;
 
 abstract class WorkflowSender
 {
@@ -21,6 +24,19 @@ abstract class WorkflowSender
      */
     protected $workflowUpdater;
     /**
+     * @var \Betalabs\EngineWorkflowHelper\Workflow\Creator
+     */
+    protected $workflowCreator;
+    /**
+     * @var \Betalabs\EngineWorkflowHelper\Workflow\Condition\Creator
+     */
+    protected $conditionCreator;
+
+    /**
+     * @var \Betalabs\EngineWorkflowHelper\Workflow\Step\Creator
+     */
+    protected $stepCreator;
+    /**
      * @var \Illuminate\Support\Collection
      */
     protected $event;
@@ -28,7 +44,6 @@ abstract class WorkflowSender
      * @var \Illuminate\Support\Collection
      */
     protected $listener;
-
     /**
      * @const string
      */
@@ -53,16 +68,24 @@ abstract class WorkflowSender
      * @param \Betalabs\EngineWorkflowHelper\Event\Indexer $eventIndexer
      * @param \Betalabs\EngineWorkflowHelper\Listener\Indexer $listenerIndexer
      * @param \Betalabs\EngineWorkflowHelper\Workflow\Updater $workflowUpdater
+     * @param \Betalabs\EngineWorkflowHelper\Workflow\Creator $workflowCreator
+     * @param \Betalabs\EngineWorkflowHelper\Workflow\Condition\Creator $conditionCreator
+     * @param \Betalabs\EngineWorkflowHelper\Workflow\Step\Creator $stepCreator
      */
     public function __construct(
         EventIndexer $eventIndexer,
         ListenerIndexer $listenerIndexer,
-        WorkflowUpdater $workflowUpdater
-    )
-    {
+        WorkflowUpdater $workflowUpdater,
+        WorkflowCreator $workflowCreator,
+        ConditionCreator $conditionCreator,
+        StepCreator $stepCreator
+    ) {
         $this->eventIndexer = $eventIndexer;
         $this->listenerIndexer = $listenerIndexer;
         $this->workflowUpdater = $workflowUpdater;
+        $this->workflowCreator = $workflowCreator;
+        $this->conditionCreator = $conditionCreator;
+        $this->stepCreator = $stepCreator;
     }
 
     /**

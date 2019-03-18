@@ -39,18 +39,6 @@ class Creator extends AbstractCreator
     private $yPosition;
 
     /**
-     * Creator constructor.
-     *
-     * @param string $name
-     * @param int $engineEventId
-     */
-    public function __construct(string $name, int $engineEventId)
-    {
-        $this->name = $name;
-        $this->engineEventId = $engineEventId;
-    }
-
-    /**
      * Set the name property.
      *
      * @param string $name

@@ -18,5 +18,13 @@
     "psr-4": {
       "Betalabs\\EngineWorkflowHelper\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Betalabs\\EngineWorkflowHelper\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "orchestra/testbench": "^3.8"
   }
 }

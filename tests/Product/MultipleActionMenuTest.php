@@ -1,25 +1,24 @@
 <?php
+namespace Betalabs\EngineWorkflowHelper\Tests\Product;
 
-use Betalabs\EngineWorkflowHelper\Tests\Product\AbstractActionMenu;
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\SingleActionMenu;
+
+use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\MultipleActionMenu;
+use Facades\Betalabs\EngineWorkflowHelper\Workflow\Condition\Creator as ConditionCreator;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Step\Creator as StepCreator;
 use Facades\Betalabs\EngineWorkflowHelper\Event\Indexer as EventIndexer;
 
-class SingleActionMenuTest extends AbstractActionMenu
+class MultipleActionMenuTest extends AbstractActionMenu
 {
-    public function testSingleActionMenu()
+    public function testMultipleActionMenu()
     {
         $name = 'Action Menu Test';
         $identification = 'action-menu-test';
 
-        $paramAliasId = new \stdClass();
-        $paramAliasId->name = 'aliasId';
-        $paramAliasId->id = 5;
-        $entityAliasId = new \stdClass();
-        $entityAliasId->name = 'entity';
-        $entityAliasId->id = 52;
+        $entity = new \stdClass();
+        $entity->name = 'entity';
+        $entity->id = 52;
         $event = new \stdClass();
-        $event->params = [$paramAliasId, $entityAliasId];
+        $event->params = [$entity];
         $event->id = 1;
         $this->mockEventIndexer($event);
 
@@ -38,20 +37,45 @@ class SingleActionMenuTest extends AbstractActionMenu
         $workflow->id = 23;
         $this->mockWorkflowCreator($name, $event, $identification, $workflow);
 
-        $this->mockConditionCreator($entityAliasId, $workflow);
+        $this->mockConditionCreator($entity, $workflow);
 
         $step = new \stdClass();
         $step->id = 12;
-        $this->mockStepCreator($workflow, $listener, $appRegistryId, $uri, $paramAliasId, $step);
+        $this->mockStepCreator($workflow, $listener, $appRegistryId, $uri, $step);
 
         $this->mockWorkflowUpdater($workflow, $step);
 
-        /** @var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\SingleActionMenu $singleActionMenu**/
-        $singleActionMenu = resolve(SingleActionMenu::class);
-        $singleActionMenu->setName($name)
+        /** @var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\MultipleActionMenu $multipleActionMenu**/
+        $multipleActionMenu = resolve(MultipleActionMenu::class);
+        $multipleActionMenu->setName($name)
             ->setEngineRegistryId(1)
             ->setIdentification($identification)
             ->create();
+    }
+
+    /**
+     * @param $entityAliasId
+     * @param $workflow
+     */
+    protected function mockConditionCreator($entityAliasId, $workflow): void
+    {
+        ConditionCreator::shouldReceive('setEngineEventParamId')
+            ->with($entityAliasId->id)
+            ->andReturnSelf();
+        ConditionCreator::shouldReceive('setWorkflowId')
+            ->with($workflow->id)
+            ->andReturnSelf();
+        ConditionCreator::shouldReceive('setValue')
+            ->with('item-price')
+            ->andReturnSelf();
+        ConditionCreator::shouldReceive('setOperator')
+            ->with('=')
+            ->andReturnSelf();
+        ConditionCreator::shouldReceive('setApproach')
+            ->with('and')
+            ->andReturnSelf();
+        ConditionCreator::shouldReceive('create')
+            ->andReturn($this->anything());
     }
 
     /**
@@ -59,10 +83,9 @@ class SingleActionMenuTest extends AbstractActionMenu
      * @param $listener
      * @param $appRegistryId
      * @param $uri
-     * @param $paramAliasId
      * @param $step
      */
-    protected function mockStepCreator($workflow, $listener, $appRegistryId, $uri, $paramAliasId, $step): void
+    protected function mockStepCreator($workflow, $listener, $appRegistryId, $uri, $step): void
     {
         StepCreator::shouldReceive('setApproach')
             ->with('synchronous')
@@ -81,16 +104,8 @@ class SingleActionMenuTest extends AbstractActionMenu
                 ],
                 [
                     'engine_listener_param_id' => $uri->id,
-                    'value' => 'products/',
-                ],
-                [
-                    'engine_event_param_id' => $paramAliasId->id,
-                    'engine_listener_param_id' => $uri->id,
-                ],
-                [
-                    'engine_listener_param_id' => $uri->id,
-                    'value' => '/action-menu',
-                ],
+                    'value' => 'products/action-menu',
+                ]
             ])
             ->andReturnSelf();
         StepCreator::shouldReceive('create')
@@ -104,8 +119,8 @@ class SingleActionMenuTest extends AbstractActionMenu
     {
         EventIndexer::shouldReceive('setQuery')
             ->with([
-                'class' => 'App\Services\VirtualEntityRecord\ActionMenuSingle',
-                'method' => 'extra',
+                'class' => 'App\Services\MenuAction\Service',
+                'method' => 'multipleExtra',
                 '_with' => 'params',
             ])
             ->andReturnSelf();
@@ -115,4 +130,6 @@ class SingleActionMenuTest extends AbstractActionMenu
         EventIndexer::shouldReceive('retrieve')
             ->andReturn(collect([$event]));
     }
+
+
 }

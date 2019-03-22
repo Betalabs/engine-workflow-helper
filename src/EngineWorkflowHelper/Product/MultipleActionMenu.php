@@ -1,18 +1,19 @@
 <?php
 
-
 namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product;
-
 
 use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractActionMenu;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
+use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Enums\VirtualEntity;
+use Betalabs\EngineWorkflowHelper\Enums\WorkflowConditionApproach;
+use Betalabs\EngineWorkflowHelper\Enums\WorkflowConditionOperator;
 
-class SingleActionMenu extends AbstractActionMenu
+class MultipleActionMenu extends AbstractActionMenu
 {
     const LISTENER_CLASS = 'App\Listeners\EngineListeners\AppDispatcher';
     const LISTENER_METHOD = 'get';
-    const EVENT_CLASS = 'App\Services\VirtualEntityRecord\ActionMenuSingle';
-    const EVENT_METHOD = 'extra';
+    const EVENT_CLASS = 'App\Services\MenuAction\Service';
+    const EVENT_METHOD = 'multipleExtra';
 
     /**
      * Create the workflow
@@ -27,7 +28,6 @@ class SingleActionMenu extends AbstractActionMenu
 
         $appRegistryParam = $this->searchEventParam('appRegistryId', $this->listener->params);
         $appUriParam = $this->searchEventParam('uri', $this->listener->params);
-        $aliasIdEventParam = $this->searchEventParam('aliasId', $this->event->params);
 
         $step = $this->stepCreator
             ->setApproach(WorkflowStepApproach::SYNCHRONOUS)
@@ -40,16 +40,8 @@ class SingleActionMenu extends AbstractActionMenu
                 ],
                 [
                     'engine_listener_param_id' => $appUriParam->id,
-                    'value' => 'products/',
-                ],
-                [
-                    'engine_event_param_id' => $aliasIdEventParam->id,
-                    'engine_listener_param_id' => $appUriParam->id,
-                ],
-                [
-                    'engine_listener_param_id' => $appUriParam->id,
-                    'value' => '/action-menu',
-                ],
+                    'value' => 'products/action-menu',
+                ]
             ])
             ->create();
 
@@ -60,4 +52,18 @@ class SingleActionMenu extends AbstractActionMenu
 
     }
 
+    /**
+     * @param $eventParam
+     * @param $workflow
+     */
+    protected function createCondition($eventParam, $workflow): void
+    {
+        $this->conditionCreator
+            ->setEngineEventParamId($eventParam->id)
+            ->setWorkflowId($workflow->id)
+            ->setValue(VirtualEntity::ITEM_PRICE)
+            ->setOperator(WorkflowConditionOperator::EQUAL)
+            ->setApproach(WorkflowConditionApproach:: AND)
+            ->create();
+    }
 }

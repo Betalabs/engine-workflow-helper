@@ -32,7 +32,7 @@ class SingleActionMenuTest extends AbstractActionMenu
         $listener = new \stdClass();
         $listener->params = [$appRegistryId, $uri];
         $listener->id = 1;
-        $this->mockListenerIndexer($listener);
+        $this->mockListenerIndexer($listener,'App\Listeners\EngineListeners\AppDispatcher', 'get');
 
         $workflow = new \stdClass();
         $workflow->id = 23;

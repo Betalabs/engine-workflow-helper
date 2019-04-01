@@ -13,6 +13,20 @@ abstract class AbstractPriceGroup extends AbstractWorkflow
      * @var int
      */
     protected $engineRegistryId;
+    /**
+     * @var string
+     */
+    protected $endpoint;
+
+    /**
+     * @param string $endpoint
+     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractPriceGroup
+     */
+    public function setEndpoint(string $endpoint): AbstractPriceGroup
+    {
+        $this->endpoint = $endpoint;
+        return $this;
+    }
 
     /**
      * @param int $engineRegistryId
@@ -52,7 +66,7 @@ abstract class AbstractPriceGroup extends AbstractWorkflow
                 ],
                 [
                     'engine_listener_param_id' => $appUriParam->id,
-                    'value' => 'products/',
+                    'value' => $this->endpoint,
                 ],
                 [
                     'engine_listener_param_id' => $data->id,

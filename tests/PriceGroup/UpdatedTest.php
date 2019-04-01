@@ -12,6 +12,7 @@ class UpdatedTest extends AbstractPriceGroup
         $identification = 'price-group-test';
         $workflow = new \stdClass();
         $workflow->id = 23;
+        $endpoint = 'products/';
 
         $name = 'Price Group Updated Test';
 
@@ -44,6 +45,7 @@ class UpdatedTest extends AbstractPriceGroup
         $updated->setEngineRegistryId($engineRegistryId)
             ->setName($name)
             ->setIdentification($identification)
+            ->setEndpoint($endpoint)
             ->create();
     }
 

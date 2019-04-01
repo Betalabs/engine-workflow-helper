@@ -11,6 +11,7 @@ class CreatedTest extends AbstractPriceGroup
         $identification = 'price-group-test';
         $workflow = new \stdClass();
         $workflow->id = 23;
+        $endpoint = 'products/';
 
         $name = 'Price Group Created Test';
 
@@ -34,7 +35,7 @@ class CreatedTest extends AbstractPriceGroup
             $listener,
             $event,
             $engineRegistryId,
-            'products/'
+            $endpoint
         );
 
         $this->mockWorkflowUpdater($workflow, $step);
@@ -43,6 +44,7 @@ class CreatedTest extends AbstractPriceGroup
         $created->setEngineRegistryId($engineRegistryId)
             ->setName($name)
             ->setIdentification($identification)
+            ->setEndpoint($endpoint)
             ->create();
     }
 }

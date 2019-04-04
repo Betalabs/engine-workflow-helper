@@ -86,7 +86,7 @@ class Updated extends AbstractWorkflow
     private function getWorkflow(string $identification)
     {
         /**@var \Illuminate\Support\Collection $workflow **/
-        $workflow = Indexer::setLimit(1000)
+        $workflow = Indexer::setLimit(1)
             ->setQuery(['identification' => $identification])
             ->retrieve();
         if ($workflow->isEmpty()) {

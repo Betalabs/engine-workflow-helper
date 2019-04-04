@@ -46,7 +46,7 @@ class UpdatedTest extends AbstractWorkflow
         $workflow->workflow_step_id = 12;
 
         WorkflowIndexer::shouldReceive('setLimit')
-            ->with(1000)
+            ->with(1)
             ->once()
             ->andReturnSelf();
         WorkflowIndexer::shouldReceive('setQuery')

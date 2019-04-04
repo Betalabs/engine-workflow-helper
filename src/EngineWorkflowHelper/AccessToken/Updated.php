@@ -41,8 +41,8 @@ class Updated extends AbstractWorkflow
         $this->setUp();
         $workflow = $this->getWorkflow('App.AccessToken.Updated');
 
-        $tokenEventParam = $this->searchEventParam('token', $workflow->engine_event->params);
-        $appRegistryIdEventParam = $this->searchEventParam('appRegistryId', $workflow->engine_event->params);
+        $tokenEventParam = $this->searchEventParam('token', $this->event->params);
+        $appRegistryIdEventParam = $this->searchEventParam('appRegistryId', $this->event->params);
 
         $appRegistryParam = $this->searchEventParam('appRegistryId', $this->listener->params);
         $appUriParam = $this->searchEventParam('uri', $this->listener->params);
@@ -86,7 +86,7 @@ class Updated extends AbstractWorkflow
     private function getWorkflow(string $identification)
     {
         /**@var \Illuminate\Support\Collection $workflow **/
-        $workflow = Indexer::setLimit(1000)
+        $workflow = Indexer::setLimit(1)
             ->setQuery(['identification' => $identification])
             ->retrieve();
         if ($workflow->isEmpty()) {

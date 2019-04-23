@@ -113,7 +113,7 @@ abstract class WorkflowSender
      *
      * @return \stdClass|null
      */
-    protected function searchEventParam(string $name, array $params)
+    protected function searchParam(string $name, array $params)
     {
         foreach ($params as $key => $param) {
             if ($param->name == $name) {

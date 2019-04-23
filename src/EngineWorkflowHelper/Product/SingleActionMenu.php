@@ -22,12 +22,12 @@ class SingleActionMenu extends AbstractActionMenu
         $this->setUp();
 
         $workflow = $this->createWorkflow();
-        $eventParam = $this->searchEventParam('entity', $this->event->params);
+        $eventParam = $this->searchParam('entity', $this->event->params);
         $this->createCondition($eventParam, $workflow);
 
-        $appRegistryParam = $this->searchEventParam('appRegistryId', $this->listener->params);
-        $appUriParam = $this->searchEventParam('uri', $this->listener->params);
-        $aliasIdEventParam = $this->searchEventParam('aliasId', $this->event->params);
+        $appRegistryParam = $this->searchParam('appRegistryId', $this->listener->params);
+        $appUriParam = $this->searchParam('uri', $this->listener->params);
+        $aliasIdEventParam = $this->searchParam('aliasId', $this->event->params);
 
         $step = $this->stepCreator
             ->setApproach(WorkflowStepApproach::SYNCHRONOUS)

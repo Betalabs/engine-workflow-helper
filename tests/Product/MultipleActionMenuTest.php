@@ -20,7 +20,7 @@ class MultipleActionMenuTest extends AbstractActionMenu
         $event = new \stdClass();
         $event->params = [$entity];
         $event->id = 1;
-        $this->mockEventIndexer($event);
+        $this->mockEventIndexer($event, 'App\Services\MenuAction\Service', 'multipleExtra');
 
         $appRegistryId = new \stdClass();
         $appRegistryId->name = 'appRegistryId';
@@ -114,13 +114,15 @@ class MultipleActionMenuTest extends AbstractActionMenu
 
     /**
      * @param $event
+     * @param $classPath
+     * @param $classMethod
      */
-    protected function mockEventIndexer($event): void
+    protected function mockEventIndexer($event, $classPath, $classMethod)
     {
         EventIndexer::shouldReceive('setQuery')
             ->with([
-                'class' => 'App\Services\MenuAction\Service',
-                'method' => 'multipleExtra',
+                'class' => $classPath,
+                'method' => $classMethod,
                 '_with' => 'params',
             ])
             ->andReturnSelf();

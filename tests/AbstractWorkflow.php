@@ -44,6 +44,26 @@ class AbstractWorkflow extends TestCase
         return $event;
     }
 
+    protected function mockEventIndexer($event, $classPath, $classMethod)
+    {
+        EventIndexer::shouldReceive('setQuery')
+            ->with([
+                'class' => $classPath,
+                'method' => $classMethod,
+                '_with' => 'params',
+            ])
+            ->once()
+            ->andReturnSelf();
+        EventIndexer::shouldReceive('setLimit')
+            ->with(1)
+            ->once()
+            ->andReturnSelf();
+        EventIndexer::shouldReceive('retrieve')
+            ->once()
+            ->andReturn(collect([$event]));
+        return $event;
+    }
+
     protected function mockListenerIndexer($listener, $classPath, $classMethod)
     {
         ListenerIndexer::shouldReceive('setQuery')

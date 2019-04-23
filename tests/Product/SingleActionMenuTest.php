@@ -21,7 +21,7 @@ class SingleActionMenuTest extends AbstractActionMenu
         $event = new \stdClass();
         $event->params = [$paramAliasId, $entityAliasId];
         $event->id = 1;
-        $this->mockEventIndexer($event);
+        $this->mockEventIndexer($event, 'App\Services\VirtualEntityRecord\ActionMenuSingle', 'extra');
 
         $appRegistryId = new \stdClass();
         $appRegistryId->name = 'appRegistryId';
@@ -100,12 +100,12 @@ class SingleActionMenuTest extends AbstractActionMenu
     /**
      * @param $event
      */
-    protected function mockEventIndexer($event): void
+    protected function mockEventIndexer($event, $classPath, $classMethod)
     {
         EventIndexer::shouldReceive('setQuery')
             ->with([
-                'class' => 'App\Services\VirtualEntityRecord\ActionMenuSingle',
-                'method' => 'extra',
+                'class' => $classPath,
+                'method' => $classMethod,
                 '_with' => 'params',
             ])
             ->andReturnSelf();

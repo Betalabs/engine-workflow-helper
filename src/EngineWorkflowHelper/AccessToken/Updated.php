@@ -41,12 +41,12 @@ class Updated extends AbstractWorkflow
         $this->setUp();
         $workflow = $this->getWorkflow('App.AccessToken.Updated');
 
-        $tokenEventParam = $this->searchEventParam('token', $this->event->params);
-        $appRegistryIdEventParam = $this->searchEventParam('appRegistryId', $this->event->params);
+        $tokenEventParam = $this->searchParam('token', $this->event->params);
+        $appRegistryIdEventParam = $this->searchParam('appRegistryId', $this->event->params);
 
-        $appRegistryParam = $this->searchEventParam('appRegistryId', $this->listener->params);
-        $appUriParam = $this->searchEventParam('uri', $this->listener->params);
-        $data = $this->searchEventParam('data', $this->listener->params);
+        $appRegistryParam = $this->searchParam('appRegistryId', $this->listener->params);
+        $appUriParam = $this->searchParam('uri', $this->listener->params);
+        $data = $this->searchParam('data', $this->listener->params);
 
         $step = $this->stepCreator
             ->setApproach(WorkflowStepApproach::SYNCHRONOUS)

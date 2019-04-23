@@ -48,12 +48,12 @@ abstract class AbstractPriceGroup extends AbstractWorkflow
 
         $workflow = $this->createWorkflow();
 
-        $priceGroupParam = $this->searchEventParam('priceGroup', $this->event->params);
-        $channelIdsParam = $this->searchEventParam('channelIds', $this->event->params);
+        $priceGroupParam = $this->searchParam('priceGroup', $this->event->params);
+        $channelIdsParam = $this->searchParam('channelIds', $this->event->params);
 
-        $appRegistryParam = $this->searchEventParam('appRegistryId', $this->listener->params);
-        $appUriParam = $this->searchEventParam('uri', $this->listener->params);
-        $data = $this->searchEventParam('data', $this->listener->params);
+        $appRegistryParam = $this->searchParam('appRegistryId', $this->listener->params);
+        $appUriParam = $this->searchParam('uri', $this->listener->params);
+        $data = $this->searchParam('data', $this->listener->params);
 
         $step = $this->stepCreator
             ->setApproach(WorkflowStepApproach::SYNCHRONOUS)

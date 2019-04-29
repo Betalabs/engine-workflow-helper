@@ -84,8 +84,14 @@ class AbstractWorkflow extends TestCase
         return $listener;
     }
 
-    protected function mockAppDispatcherPostOrPutStep($workflow, $listener, $event, $engineRegistryId, $endpoint)
-    {
+    protected function mockAppDispatcherPostOrPutStep(
+        $workflow,
+        $listener,
+        $event,
+        $engineRegistryId,
+        $endpoint,
+        $firstEngineEventParam = null
+    ) {
         $step = new \stdClass();
         $step->id = 21;
         StepCreator::shouldReceive('setApproach')
@@ -100,25 +106,32 @@ class AbstractWorkflow extends TestCase
             ->with($listener->id)
             ->once()
             ->andReturnSelf();
+        $params = [
+            [
+                'engine_listener_param_id' => $listener->params[0]->id,
+                'value' => $engineRegistryId,
+            ],
+            [
+                'engine_listener_param_id' => $listener->params[1]->id,
+                'value' => $endpoint,
+            ],
+            [
+                'engine_listener_param_id' => $listener->params[2]->id,
+                'engine_event_param_id' => $event->params[0]->id
+            ],
+            [
+                'engine_listener_param_id' => $listener->params[2]->id,
+                'engine_event_param_id' => $event->params[1]->id
+            ]
+        ];
+
+        if($firstEngineEventParam) {
+            unset($params[2]['engine_event_param_id']);
+            $params[2]['value'] = $firstEngineEventParam;
+        }
+
         StepCreator::shouldReceive('setParams')
-            ->with([
-                [
-                    'engine_listener_param_id' => $listener->params[0]->id,
-                    'value' => $engineRegistryId,
-                ],
-                [
-                    'engine_listener_param_id' => $listener->params[1]->id,
-                    'value' => $endpoint,
-                ],
-                [
-                    'engine_listener_param_id' => $listener->params[2]->id,
-                    'engine_event_param_id' => $event->params[0]->id
-                ],
-                [
-                    'engine_listener_param_id' => $listener->params[2]->id,
-                    'engine_event_param_id' => $event->params[1]->id
-                ]
-            ])
+            ->with($params)
             ->once()
             ->andReturnSelf();
         StepCreator::shouldReceive('create')

@@ -15,6 +15,11 @@ class SingleActionMenu extends AbstractActionMenu
     const EVENT_METHOD = 'extra';
 
     /**
+     * @var string
+     */
+    private $endpointSuffix;
+
+    /**
      * Create the workflow
      */
     public function create()
@@ -40,7 +45,7 @@ class SingleActionMenu extends AbstractActionMenu
                 ],
                 [
                     'engine_listener_param_id' => $appUriParam->id,
-                    'value' => 'products/',
+                    'value' => $this->endpoint ?? 'products/',
                 ],
                 [
                     'engine_event_param_id' => $aliasIdEventParam->id,
@@ -48,7 +53,7 @@ class SingleActionMenu extends AbstractActionMenu
                 ],
                 [
                     'engine_listener_param_id' => $appUriParam->id,
-                    'value' => '/action-menu',
+                    'value' => $this->endpointSuffix ?? '/action-menu',
                 ],
             ])
             ->create();
@@ -58,6 +63,16 @@ class SingleActionMenu extends AbstractActionMenu
             ->setWorkflowStepId($step->id)
             ->update();
 
+    }
+
+    /**
+     * @param string $endpointSuffix
+     * @return SingleActionMenu
+     */
+    public function setEndpointSuffix(string $endpointSuffix): SingleActionMenu
+    {
+        $this->endpointSuffix = $endpointSuffix;
+        return $this;
     }
 
 }

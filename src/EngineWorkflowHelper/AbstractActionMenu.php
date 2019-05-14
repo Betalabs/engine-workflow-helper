@@ -15,6 +15,21 @@ abstract class AbstractActionMenu extends AbstractWorkflow
     protected $engineRegistryId;
 
     /**
+     * @var string
+     */
+    protected $endpoint;
+
+    /**
+     * @param string $endpoint
+     * @return AbstractActionMenu
+     */
+    public function setEndpoint(string $endpoint): AbstractActionMenu
+    {
+        $this->endpoint = $endpoint;
+        return $this;
+    }
+
+    /**
      * @param int $engineRegistryId
      * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractActionMenu
      */

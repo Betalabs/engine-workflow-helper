@@ -40,7 +40,7 @@ class MultipleActionMenu extends AbstractActionMenu
                 ],
                 [
                     'engine_listener_param_id' => $appUriParam->id,
-                    'value' => 'products/action-menu',
+                    'value' => $this->endpoint ?? 'products/action-menu',
                 ]
             ])
             ->create();

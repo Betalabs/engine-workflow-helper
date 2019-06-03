@@ -11,15 +11,15 @@ abstract class AbstractIndexer
     /**
      * @var array
      */
-    private $query = [];
+    protected $query = [];
     /**
      * @var int
      */
-    private $limit = 10;
+    protected $limit = 10;
     /**
      * @var int
      */
-    private $offset = 0;
+    protected $offset = 0;
 
     /**
      * Set the query property.

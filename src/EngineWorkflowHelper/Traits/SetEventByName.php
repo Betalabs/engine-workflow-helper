@@ -11,7 +11,7 @@ trait SetEventByName
     {
         $events = $this->eventIndexer
             ->setQuery([
-                'name' => static::EVENT_NAME,
+                'name' => static::EVENT_NAME ?? $this->eventName,
                 '_with' => 'params'
             ])
             ->setLimit(1)

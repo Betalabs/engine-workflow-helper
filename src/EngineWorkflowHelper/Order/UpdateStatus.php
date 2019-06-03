@@ -18,26 +18,18 @@ class UpdateStatus extends AbstractWorkflow
     const LISTENER_METHOD = 'changeRaw';
     const EVENT_NAME = null;
 
-    protected function setUp()
-    {
-        parent::setUp();
-        $this->setOrderStatusParameters();
-    }
     /**
      * @var int
      */
     private $virtualEntityRecordStatusId;
-
     /**
      * @var int
      */
     private $orderStatusFormId;
-
     /**
      * @var int
      */
     private $orderStatusExtraFieldId;
-
     /**
      * @var string
      */
@@ -46,6 +38,16 @@ class UpdateStatus extends AbstractWorkflow
      * @var string
      */
     private $eventName;
+
+    /**
+     * Set Workflow events, listeners and order status properties
+     *
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->setOrderStatusParameters();
+    }
 
     /**
      * Create the workflow

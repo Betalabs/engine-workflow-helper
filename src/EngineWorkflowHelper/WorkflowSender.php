@@ -132,8 +132,8 @@ abstract class WorkflowSender
     {
         $events = $this->eventIndexer
             ->setQuery([
-                'class' => static::EVENT_CLASS,
-                'method' => static::EVENT_METHOD,
+                'class' => static::EVENT_CLASS ?? $this->eventClass,
+                'method' => static::EVENT_METHOD ?? $this->eventMethod,
                 '_with' => 'params',
             ])
             ->setLimit(1)
@@ -152,8 +152,8 @@ abstract class WorkflowSender
     {
         $listeners = $this->listenerIndexer
             ->setQuery([
-                'class' => static::LISTENER_CLASS,
-                'method' => static::LISTENER_METHOD,
+                'class' => static::LISTENER_CLASS ?? $this->listenerClass,
+                'method' => static::LISTENER_METHOD ?? $this->listenerMethod,
                 '_with' => 'params',
             ])
             ->setLimit(1)

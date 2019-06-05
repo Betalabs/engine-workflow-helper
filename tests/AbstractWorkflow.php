@@ -2,14 +2,18 @@
 
 namespace Betalabs\EngineWorkflowHelper\Tests;
 
+use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Creator as WorkflowCreator;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Step\Creator as StepCreator;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Updater as WorkflowUpdater;
 use Facades\Betalabs\EngineWorkflowHelper\Event\Indexer as EventIndexer;
 use Facades\Betalabs\EngineWorkflowHelper\Listener\Indexer as ListenerIndexer;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class AbstractWorkflow extends TestCase
 {
+    use WithFaker;
+
     protected function mockWorkflowUpdater($workflow, $step)
     {
         WorkflowUpdater::shouldReceive('setWorkflowId')
@@ -159,5 +163,48 @@ class AbstractWorkflow extends TestCase
             ->andReturnSelf();
         WorkflowCreator::shouldReceive('create')
             ->andReturn($workflow);
+    }
+
+    protected function eventOrListenerIndexerReturn(array $params): \stdClass
+    {
+        $params = collect($params)->map(function ($param) {
+            return (object)[
+                'id' => $this->faker->randomNumber(),
+                'name' => $param
+            ];
+        })->all();
+
+        return (object)[
+            'params' => $params,
+            'id' => $this->faker->randomNumber()
+        ];
+    }
+
+    protected function mockStep(
+        $stepParams,
+        $workflowId,
+        $listenerId,
+        $approach = WorkflowStepApproach::SYNCHRONOUS
+    ) {
+        StepCreator::shouldReceive('setWorkflowId')
+            ->once()
+            ->with($workflowId)
+            ->andReturnSelf();
+        StepCreator::shouldReceive('setListenerId')
+            ->once()
+            ->with($listenerId)
+            ->andReturnSelf();
+        StepCreator::shouldReceive('setApproach')
+            ->once()
+            ->with($approach)
+            ->andReturnSelf();
+        StepCreator::shouldReceive('setParams')
+            ->once()
+            ->with($stepParams)
+            ->andReturnSelf();
+        StepCreator::shouldReceive('create')
+            ->once()
+            ->andReturn($step = (object)['id' => $this->faker->randomNumber()]);
+        return $step;
     }
 }

@@ -45,21 +45,21 @@ abstract class WorkflowSender
      */
     protected $listener;
     /**
-     * @const string
+     * @const null|string
      */
-    const EVENT_CLASS = self::EVENT_CLASS;
+    const EVENT_CLASS = null;
     /**
-     * @const string
+     * @const null|string
      */
-    const EVENT_METHOD = self::EVENT_METHOD;
+    const EVENT_METHOD = null;
     /**
-     * @const string
+     * @const null|string
      */
-    const LISTENER_CLASS = self::LISTENER_CLASS;
+    const LISTENER_CLASS = null;
     /**
-     * @const string
+     * @const null|string
      */
-    const LISTENER_METHOD = self::LISTENER_METHOD;
+    const LISTENER_METHOD = null;
 
 
     /**

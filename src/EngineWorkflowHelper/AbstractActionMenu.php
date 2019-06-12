@@ -18,6 +18,10 @@ abstract class AbstractActionMenu extends AbstractWorkflow
      * @var string
      */
     protected $endpoint;
+    /**
+     * @var string
+     */
+    protected $entity;
 
     /**
      * @param string $endpoint
@@ -48,7 +52,7 @@ abstract class AbstractActionMenu extends AbstractWorkflow
         $this->conditionCreator
             ->setEngineEventParamId($eventParam->id)
             ->setWorkflowId($workflow->id)
-            ->setValue(VirtualEntity::ITEMS_SLUG)
+            ->setValue($this->entity ?? VirtualEntity::ITEMS_SLUG)
             ->setOperator(WorkflowConditionOperator::EQUAL)
             ->setApproach(WorkflowConditionApproach:: AND)
             ->create();

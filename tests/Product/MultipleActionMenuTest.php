@@ -3,7 +3,7 @@ namespace Betalabs\EngineWorkflowHelper\Tests\Product;
 
 
 use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\MultipleActionMenu;
-use Facades\Betalabs\EngineWorkflowHelper\Workflow\Condition\Creator as ConditionCreator;
+use Betalabs\EngineWorkflowHelper\Tests\AbstractActionMenu;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Step\Creator as StepCreator;
 use Facades\Betalabs\EngineWorkflowHelper\Event\Indexer as EventIndexer;
 
@@ -37,7 +37,7 @@ class MultipleActionMenuTest extends AbstractActionMenu
         $workflow->id = 23;
         $this->mockWorkflowCreator($name, $event, $identification, $workflow);
 
-        $this->mockConditionCreator($entity, $workflow);
+        $this->mockConditionCreator($entity, $workflow, 'item-price');
 
         $step = new \stdClass();
         $step->id = 12;
@@ -51,31 +51,6 @@ class MultipleActionMenuTest extends AbstractActionMenu
             ->setEngineRegistryId(1)
             ->setIdentification($identification)
             ->create();
-    }
-
-    /**
-     * @param $entityAliasId
-     * @param $workflow
-     */
-    protected function mockConditionCreator($entityAliasId, $workflow): void
-    {
-        ConditionCreator::shouldReceive('setEngineEventParamId')
-            ->with($entityAliasId->id)
-            ->andReturnSelf();
-        ConditionCreator::shouldReceive('setWorkflowId')
-            ->with($workflow->id)
-            ->andReturnSelf();
-        ConditionCreator::shouldReceive('setValue')
-            ->with('item-price')
-            ->andReturnSelf();
-        ConditionCreator::shouldReceive('setOperator')
-            ->with('=')
-            ->andReturnSelf();
-        ConditionCreator::shouldReceive('setApproach')
-            ->with('and')
-            ->andReturnSelf();
-        ConditionCreator::shouldReceive('create')
-            ->andReturn($this->anything());
     }
 
     /**

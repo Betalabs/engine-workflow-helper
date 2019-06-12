@@ -1,31 +1,30 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\Tests\Product;
+namespace Betalabs\EngineWorkflowHelper\Tests;
 
 
-use Betalabs\EngineWorkflowHelper\Tests\AbstractWorkflow;
 
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Condition\Creator as ConditionCreator;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Updater as WorkflowUpdater;
-use Facades\Betalabs\EngineWorkflowHelper\Listener\Indexer as ListenerIndexer;
 
 class AbstractActionMenu extends AbstractWorkflow
 {
 
     /**
-     * @param $entityAliasId
+     * @param $entityId
      * @param $workflow
+     * @param $entity
      */
-    protected function mockConditionCreator($entityAliasId, $workflow): void
+    protected function mockConditionCreator($entityId, $workflow, $entity): void
     {
         ConditionCreator::shouldReceive('setEngineEventParamId')
-            ->with($entityAliasId->id)
+            ->with($entityId->id)
             ->andReturnSelf();
         ConditionCreator::shouldReceive('setWorkflowId')
             ->with($workflow->id)
             ->andReturnSelf();
         ConditionCreator::shouldReceive('setValue')
-            ->with('items')
+            ->with($entity)
             ->andReturnSelf();
         ConditionCreator::shouldReceive('setOperator')
             ->with('=')

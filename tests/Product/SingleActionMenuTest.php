@@ -1,7 +1,7 @@
 <?php
 
-use Betalabs\EngineWorkflowHelper\Tests\Product\AbstractActionMenu;
 use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\SingleActionMenu;
+use Betalabs\EngineWorkflowHelper\Tests\AbstractActionMenu;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Step\Creator as StepCreator;
 use Facades\Betalabs\EngineWorkflowHelper\Event\Indexer as EventIndexer;
 
@@ -38,7 +38,7 @@ class SingleActionMenuTest extends AbstractActionMenu
         $workflow->id = 23;
         $this->mockWorkflowCreator($name, $event, $identification, $workflow);
 
-        $this->mockConditionCreator($entityAliasId, $workflow);
+        $this->mockConditionCreator($entityAliasId, $workflow, 'items');
 
         $step = new \stdClass();
         $step->id = 12;

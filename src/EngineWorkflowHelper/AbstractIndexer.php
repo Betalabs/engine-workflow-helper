@@ -15,7 +15,7 @@ abstract class AbstractIndexer
     /**
      * @var int
      */
-    protected $limit = 10;
+    protected $limit = 100;
     /**
      * @var int
      */

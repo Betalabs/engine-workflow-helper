@@ -118,8 +118,8 @@ class UpdateStatusTest extends AbstractWorkflow
     {
         $response = (object)[
             'mapping' => (object)[
-                'order-status' => (object)[
-                    'extra_field' => (object)[
+                'extra_field' => (object)[
+                    'order-status' => (object)[
                         "key" => "status_16_17",
                         "type" => "entity_reference",
                         "fields" => []

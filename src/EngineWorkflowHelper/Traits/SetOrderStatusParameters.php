@@ -31,13 +31,13 @@ trait SetOrderStatusParameters
             ->retrieve();
 
         $orderStatusKey = 'order-status';
-        if (empty($orderStructure['mapping']->$orderStatusKey->extra_field)) {
+        if (empty($orderStructure['mapping']->extra_field->$orderStatusKey)) {
             throw new \RuntimeException(
                 'Order Structure could not be retrieved.'
             );
         }
 
-        $extraFields = $orderStructure['mapping']->$orderStatusKey->extra_field;
+        $extraFields = $orderStructure['mapping']->extra_field->$orderStatusKey;
 
         $explodedKey = explode('_', $extraFields->key);
 

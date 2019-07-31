@@ -5,6 +5,7 @@ namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product;
 
 
 use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractActionMenu;
+use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Enums\VirtualEntity;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
 
 class SingleActionMenu extends AbstractActionMenu
@@ -13,6 +14,11 @@ class SingleActionMenu extends AbstractActionMenu
     const LISTENER_METHOD = 'get';
     const EVENT_CLASS = 'App\Services\VirtualEntityRecord\ActionMenuSingle';
     const EVENT_METHOD = 'extra';
+
+    /**
+     * @var string
+     */
+    protected $entity = VirtualEntity::ITEM_SLUG;
 
     /**
      * @var string

@@ -38,7 +38,7 @@ class SingleActionMenuTest extends AbstractActionMenu
         $workflow->id = 23;
         $this->mockWorkflowCreator($name, $event, $identification, $workflow);
 
-        $this->mockConditionCreator($entityAliasId, $workflow, 'items');
+        $this->mockConditionCreator($entityAliasId, $workflow, 'item');
 
         $step = new \stdClass();
         $step->id = 12;

@@ -82,7 +82,7 @@ class AbstractProduct extends AbstractWorkflow
             ->with($workflow->id)
             ->andReturnSelf();
         ConditionCreator::shouldReceive('setValue')
-            ->with('items')
+            ->with('item')
             ->andReturnSelf();
         ConditionCreator::shouldReceive('setOperator')
             ->with('=')

@@ -53,7 +53,7 @@ abstract class AbstractProduct extends AbstractWorkflow
         $this->conditionCreator
             ->setWorkflowId($workflow->id)
             ->setEngineEventParamId($virtualEntitySlugParam->id)
-            ->setValue(VirtualEntity::ITEMS_SLUG)
+            ->setValue(VirtualEntity::ITEM_SLUG)
             ->setOperator(new Operator(Operator::EQUAL))
             ->setApproach(new Approach(Approach:: AND))
             ->create();

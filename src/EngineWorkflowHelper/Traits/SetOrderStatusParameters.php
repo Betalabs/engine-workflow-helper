@@ -92,7 +92,7 @@ trait SetOrderStatusParameters
     protected function searchVirtualEntityRecordId($virtualEntityRecords, $nameKey): int
     {
         foreach ($virtualEntityRecords as $virtualEntityRecord) {
-            if ($virtualEntityRecord->$nameKey == $this->orderStatus) {
+            if (isset($virtualEntityRecord->$nameKey) && $virtualEntityRecord->$nameKey == $this->orderStatus) {
                 return $virtualEntityRecord->real_id;
             }
         }

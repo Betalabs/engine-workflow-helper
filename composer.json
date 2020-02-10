@@ -11,7 +11,7 @@
   ],
   "require": {
     "php": ">=7.1.3",
-    "betalabs/engine-phpsdk": "^0.5.1",
+    "betalabs/engine-phpsdk": "^0.5.1|^0.6.0",
     "myclabs/php-enum": "^1.5"
   },
   "autoload": {

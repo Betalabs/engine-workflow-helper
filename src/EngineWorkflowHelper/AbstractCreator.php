@@ -55,6 +55,7 @@ abstract class AbstractCreator
     protected function handleResponse(ResponseInterface $response): void
     {
         if ($response->getStatusCode() != Response::HTTP_CREATED) {
+            \Log::error($response->getBody()->getContents());
             throw new \RuntimeException($this->exceptionMessage);
         }
     }

@@ -39,6 +39,7 @@ abstract class AbstractCreator
             $post = Request::post();
             $response = $post->send($this->endpoint(), $this->data());
         } catch (BadResponseException $e) {
+            \Log::error($e->getMessage(), $e->getTrace());
             $post = $e;
         }
 
@@ -55,7 +56,7 @@ abstract class AbstractCreator
     protected function handleResponse(ResponseInterface $response): void
     {
         if ($response->getStatusCode() != Response::HTTP_CREATED) {
-            \Log::error($response->getBody()->getContents());
+            \Log::error($response->getStatusCode() .': '. $response->getBody()->getContents());
             throw new \RuntimeException($this->exceptionMessage);
         }
     }

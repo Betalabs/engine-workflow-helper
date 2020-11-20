@@ -2,7 +2,7 @@
 
 namespace Betalabs\EngineWorkflowHelper\Tests\PriceGroup;
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\PriceGroup\Deleted;
+use Betalabs\EngineWorkflowHelper\PriceGroup\Deleted;
 
 class DeletedTest extends AbstractPriceGroup
 {
@@ -39,7 +39,7 @@ class DeletedTest extends AbstractPriceGroup
         );
 
         $this->mockWorkflowUpdater($workflow, $step);
-        /** @var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\PriceGroup\Deleted $deleted**/
+        /** @var \Betalabs\EngineWorkflowHelper\PriceGroup\Deleted $deleted**/
         $deleted = resolve(Deleted::class);
         $deleted->setEngineRegistryId($engineRegistryId)
             ->setName($name)

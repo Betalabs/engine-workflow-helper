@@ -3,7 +3,7 @@
 namespace Betalabs\EngineWorkflowHelper\Tests\Product;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\StockAdded;
+use Betalabs\EngineWorkflowHelper\Product\StockAdded;
 
 class StockAddedTest extends AbstractStock
 {

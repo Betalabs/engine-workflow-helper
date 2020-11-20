@@ -3,7 +3,7 @@
 namespace Betalabs\EngineWorkflowHelper\Tests\Structure;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Structure\Additional;
+use Betalabs\EngineWorkflowHelper\Structure\Additional;
 use Betalabs\EngineWorkflowHelper\Tests\AbstractWorkflow;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Condition\Creator as ConditionCreator;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Step\Creator as StepCreator;
@@ -43,7 +43,7 @@ class AdditionalTest extends AbstractWorkflow
         $this->mockWorkflowUpdater($workflow, $step);
 
 
-        /**@var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Structure\Additional $additional**/
+        /**@var \Betalabs\EngineWorkflowHelper\Structure\Additional $additional**/
         $additional = resolve(Additional::class);
         $additional->setEngineRegistryId($engineRegistryId)
             ->setEntity($entity)

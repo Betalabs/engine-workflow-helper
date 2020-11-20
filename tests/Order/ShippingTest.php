@@ -3,7 +3,7 @@
 namespace Betalabs\EngineWorkflowHelper\Tests\Order;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order\Shipping;
+use Betalabs\EngineWorkflowHelper\Order\Shipping;
 use Betalabs\EngineWorkflowHelper\Tests\AbstractWorkflow;
 use Illuminate\Foundation\Testing\WithFaker;
 
@@ -45,7 +45,7 @@ class ShippingTest extends AbstractWorkflow
 
         $this->mockWorkflowUpdater($workflow, $step);
 
-        /**@var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order\Shipping $shipping**/
+        /**@var \Betalabs\EngineWorkflowHelper\Order\Shipping $shipping**/
         $shipping = resolve(Shipping::class);
         $shipping->setEventName($eventName)
             ->setEngineRegistryId(1)

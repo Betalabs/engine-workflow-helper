@@ -1,9 +1,9 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product;
+namespace Betalabs\EngineWorkflowHelper\Product;
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractWorkflow;
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Traits\SetEventByName;
+use Betalabs\EngineWorkflowHelper\AbstractWorkflow;
+use Betalabs\EngineWorkflowHelper\Traits\SetEventByName;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
 
 abstract class AbstractStock extends AbstractWorkflow
@@ -20,7 +20,7 @@ abstract class AbstractStock extends AbstractWorkflow
 
     /**
      * @param int $engineRegistryId
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\AbstractStock
+     * @return \Betalabs\EngineWorkflowHelper\Product\AbstractStock
      */
     public function setEngineRegistryId(int $engineRegistryId): AbstractStock
     {
@@ -30,7 +30,7 @@ abstract class AbstractStock extends AbstractWorkflow
 
     /**
      * @param string $endpoint
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\AbstractStock
+     * @return \Betalabs\EngineWorkflowHelper\Product\AbstractStock
      */
     public function setEndpoint(string $endpoint): AbstractStock
     {

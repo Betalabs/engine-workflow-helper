@@ -1,6 +1,6 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Structure;
+namespace Betalabs\EngineWorkflowHelper\Structure;
 
 
 use Betalabs\EngineWorkflowHelper\AbstractIndexer;

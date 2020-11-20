@@ -2,7 +2,7 @@
 
 namespace Betalabs\EngineWorkflowHelper\Tests\Product;
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\StockRemoved;
+use Betalabs\EngineWorkflowHelper\Product\StockRemoved;
 
 class StockRemovedTest extends AbstractStock
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AccessToken;
+namespace Betalabs\EngineWorkflowHelper\AccessToken;
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractWorkflow;
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Traits\SetEventByName;
-use Facades\Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Workflow\Transition\Associate;
+use Betalabs\EngineWorkflowHelper\AbstractWorkflow;
+use Betalabs\EngineWorkflowHelper\Traits\SetEventByName;
+use Facades\Betalabs\EngineWorkflowHelper\Workflow\Transition\Associate;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
-use Facades\Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Workflow\Indexer;
+use Facades\Betalabs\EngineWorkflowHelper\Workflow\Indexer;
 
 class Updated extends AbstractWorkflow
 {
@@ -24,7 +24,7 @@ class Updated extends AbstractWorkflow
 
     /**
      * @param int $engineRegistryId
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractWorkflow
+     * @return \Betalabs\EngineWorkflowHelper\AbstractWorkflow
      */
     public function setEngineRegistryId(int $engineRegistryId): AbstractWorkflow
     {

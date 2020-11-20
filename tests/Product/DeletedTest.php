@@ -3,7 +3,7 @@
 namespace Betalabs\EngineWorkflowHelper\Tests\Product;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\Deleted;
+use Betalabs\EngineWorkflowHelper\Product\Deleted;
 
 class DeletedTest extends AbstractProduct
 {

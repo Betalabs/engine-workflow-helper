@@ -1,9 +1,9 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Structure;
+namespace Betalabs\EngineWorkflowHelper\Structure;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractWorkflow;
+use Betalabs\EngineWorkflowHelper\AbstractWorkflow;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowConditionApproach;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowConditionOperator;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
@@ -30,7 +30,7 @@ class Additional extends AbstractWorkflow
 
     /**
      * @param int $engineRegistryId
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Structure\Additional
+     * @return \Betalabs\EngineWorkflowHelper\Structure\Additional
      */
     public function setEngineRegistryId(int $engineRegistryId): Additional
     {
@@ -40,7 +40,7 @@ class Additional extends AbstractWorkflow
 
     /**
      * @param string $structureUri
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Structure\Additional
+     * @return \Betalabs\EngineWorkflowHelper\Structure\Additional
      */
     public function setStructureUri(string $structureUri): Additional
     {
@@ -50,7 +50,7 @@ class Additional extends AbstractWorkflow
 
     /**
      * @param string $entity
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Structure\Additional
+     * @return \Betalabs\EngineWorkflowHelper\Structure\Additional
      */
     public function setEntity(string $entity): Additional
     {

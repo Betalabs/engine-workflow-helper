@@ -1,6 +1,6 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper;
+namespace Betalabs\EngineWorkflowHelper;
 
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
 

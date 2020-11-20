@@ -2,7 +2,7 @@
 
 namespace Betalabs\EngineWorkflowHelper\Tests\PriceGroup;
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\PriceGroup\Created;
+use Betalabs\EngineWorkflowHelper\PriceGroup\Created;
 
 class CreatedTest extends AbstractPriceGroup
 {
@@ -39,7 +39,7 @@ class CreatedTest extends AbstractPriceGroup
         );
 
         $this->mockWorkflowUpdater($workflow, $step);
-        /** @var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\PriceGroup\Created $created**/
+        /** @var \Betalabs\EngineWorkflowHelper\PriceGroup\Created $created**/
         $created = resolve(Created::class);
         $created->setEngineRegistryId($engineRegistryId)
             ->setName($name)

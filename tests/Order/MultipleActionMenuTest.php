@@ -3,7 +3,7 @@
 namespace Betalabs\EngineWorkflowHelper\Tests\Order;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order\MultipleActionMenu;
+use Betalabs\EngineWorkflowHelper\Order\MultipleActionMenu;
 use Betalabs\EngineWorkflowHelper\Tests\AbstractActionMenu;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Step\Creator as StepCreator;
 
@@ -53,7 +53,7 @@ class MultipleActionMenuTest extends AbstractActionMenu
         $this->mockStepCreator($workflow, $listener, $appRegistryId, $uri, $step = (object)['id' => 1]);
         $this->mockWorkflowUpdater($workflow, $step);
 
-        /**@var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order\MultipleActionMenu $multipleActionMenu **/
+        /**@var \Betalabs\EngineWorkflowHelper\Order\MultipleActionMenu $multipleActionMenu **/
         $multipleActionMenu  = resolve(MultipleActionMenu::class);
         $multipleActionMenu
             ->setEndpoint($endpoint)

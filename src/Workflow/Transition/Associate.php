@@ -1,6 +1,6 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Workflow\Transition;
+namespace Betalabs\EngineWorkflowHelper\Workflow\Transition;
 
 
 use Betalabs\EngineWorkflowHelper\Traits\Payload;

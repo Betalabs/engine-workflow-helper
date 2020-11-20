@@ -35,7 +35,7 @@ abstract class AbstractStock extends AbstractWorkflow
 
         $this->mockWorkflowUpdater($workflow, $step);
 
-        /**@var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\AbstractStock $resolvedClassToTest**/
+        /**@var \Betalabs\EngineWorkflowHelper\Product\AbstractStock $resolvedClassToTest**/
         $resolvedClassToTest = resolve($classToTest);
         $resolvedClassToTest
             ->setEngineRegistryId($engineRegistryId)

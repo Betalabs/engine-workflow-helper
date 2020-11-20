@@ -1,8 +1,8 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order;
+namespace Betalabs\EngineWorkflowHelper\Order;
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AppDispatcher\Post;
+use Betalabs\EngineWorkflowHelper\AppDispatcher\Post;
 use Illuminate\Support\Collection;
 
 class Shipping extends Post

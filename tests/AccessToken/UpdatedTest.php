@@ -3,10 +3,10 @@
 namespace Betalabs\EngineWorkflowHelper\Tests\AccessToken;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AccessToken\Updated;
+use Betalabs\EngineWorkflowHelper\AccessToken\Updated;
 use Betalabs\EngineWorkflowHelper\Tests\AbstractWorkflow;
-use Facades\Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Workflow\Indexer as WorkflowIndexer;
-use Facades\Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Workflow\Transition\Associate;
+use Facades\Betalabs\EngineWorkflowHelper\Workflow\Indexer as WorkflowIndexer;
+use Facades\Betalabs\EngineWorkflowHelper\Workflow\Transition\Associate;
 
 class UpdatedTest extends AbstractWorkflow
 {
@@ -30,7 +30,7 @@ class UpdatedTest extends AbstractWorkflow
         $this->mockWorkflowUpdater($workflow, $step);
         $this->mockWorkflowAssociate($workflow, $step);
 
-        /**@var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AccessToken\Updated $updated**/
+        /**@var \Betalabs\EngineWorkflowHelper\AccessToken\Updated $updated**/
         $updated = resolve(Updated::class);
         $updated->setEngineRegistryId($engineRegistryId)
             ->create();

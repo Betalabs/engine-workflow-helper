@@ -1,7 +1,7 @@
 <?php
 
 namespace Betalabs\EngineWorkflowHelper\Tests\Product;
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\Updated;
+use Betalabs\EngineWorkflowHelper\Product\Updated;
 
 class UpdatedTest extends AbstractProduct
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product;
+namespace Betalabs\EngineWorkflowHelper\Product;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractWorkflow;
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Enums\VirtualEntity;
+use Betalabs\EngineWorkflowHelper\AbstractWorkflow;
+use Betalabs\EngineWorkflowHelper\Enums\VirtualEntity;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowConditionApproach as Approach;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowConditionOperator as Operator;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
@@ -22,7 +22,7 @@ abstract class AbstractProduct extends AbstractWorkflow
 
     /**
      * @param int $engineRegistryId
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\AbstractProduct
+     * @return \Betalabs\EngineWorkflowHelper\Product\AbstractProduct
      */
     public function setEngineRegistryId(int $engineRegistryId): AbstractProduct
     {
@@ -32,7 +32,7 @@ abstract class AbstractProduct extends AbstractWorkflow
 
     /**
      * @param string $endpoint
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\AbstractProduct
+     * @return \Betalabs\EngineWorkflowHelper\Product\AbstractProduct
      */
     public function setEndpoint(string $endpoint): AbstractProduct
     {

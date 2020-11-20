@@ -61,7 +61,7 @@ class AbstractProduct extends AbstractWorkflow
 
         $this->mockWorkflowUpdater($workflow, $step);
 
-        /**@var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\AbstractProduct $resolvedClassToTest**/
+        /**@var \Betalabs\EngineWorkflowHelper\Product\AbstractProduct $resolvedClassToTest**/
         $resolvedClassToTest = resolve($classToTest);
         $resolvedClassToTest->setEngineRegistryId($engineRegistryId)
             ->setName($testName)

@@ -1,9 +1,9 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Traits;
+namespace Betalabs\EngineWorkflowHelper\Traits;
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Structure\Retrieval as StructureRetrieval;
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\VirtualEntity\Retrieval as VirtualEntityRetrieval;
+use Betalabs\EngineWorkflowHelper\Structure\Retrieval as StructureRetrieval;
+use Betalabs\EngineWorkflowHelper\VirtualEntity\Retrieval as VirtualEntityRetrieval;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
@@ -16,12 +16,12 @@ trait SetOrderStatusParameters
     protected function setOrderStatusParameters(): void
     {
         /**
-         * @var $structureRetrieval \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\VirtualEntity\Retrieval
+         * @var $structureRetrieval \Betalabs\EngineWorkflowHelper\VirtualEntity\Retrieval
          */
         $structureRetrieval = resolve(StructureRetrieval::class);
 
         /**
-         * @var $virtualEntityRetrieval \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Structure\Retrieval
+         * @var $virtualEntityRetrieval \Betalabs\EngineWorkflowHelper\Structure\Retrieval
          */
         $virtualEntityRetrieval = resolve(VirtualEntityRetrieval::class);
 

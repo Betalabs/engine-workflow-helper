@@ -1,6 +1,6 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Traits;
+namespace Betalabs\EngineWorkflowHelper\Traits;
 
 trait SetEventByName
 {

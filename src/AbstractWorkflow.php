@@ -1,6 +1,6 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper;
+namespace Betalabs\EngineWorkflowHelper;
 
 
 use Betalabs\EngineWorkflowHelper\WorkflowSender;
@@ -18,7 +18,7 @@ abstract class AbstractWorkflow extends WorkflowSender
 
     /**
      * @param string $name
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractWorkflow
+     * @return \Betalabs\EngineWorkflowHelper\AbstractWorkflow
      */
     public function setName(string $name): AbstractWorkflow
     {
@@ -28,7 +28,7 @@ abstract class AbstractWorkflow extends WorkflowSender
 
     /**
      * @param string $identification
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractWorkflow
+     * @return \Betalabs\EngineWorkflowHelper\AbstractWorkflow
      */
     public function setIdentification(string $identification): AbstractWorkflow
     {

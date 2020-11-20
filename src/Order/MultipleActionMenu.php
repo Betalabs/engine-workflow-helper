@@ -1,9 +1,9 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order;
+namespace Betalabs\EngineWorkflowHelper\Order;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractMultipleActionMenu;
+use Betalabs\EngineWorkflowHelper\AbstractMultipleActionMenu;
 
 class MultipleActionMenu extends AbstractMultipleActionMenu
 {

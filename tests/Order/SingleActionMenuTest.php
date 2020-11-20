@@ -3,7 +3,7 @@
 namespace Betalabs\EngineWorkflowHelper\Tests\Order;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order\SingleActionMenu;
+use Betalabs\EngineWorkflowHelper\Order\SingleActionMenu;
 use Betalabs\EngineWorkflowHelper\Tests\AbstractActionMenu;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Step\Creator as StepCreator;
 
@@ -62,7 +62,7 @@ class SingleActionMenuTest extends AbstractActionMenu
         $this->mockStepCreator($workflow, $listener, $appRegistryId, $uri, $eventIdParam, $step = (object)['id' => 1]);
         $this->mockWorkflowUpdater($workflow, $step);
 
-        /**@var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order\SingleActionMenu $singleActionMenu **/
+        /**@var \Betalabs\EngineWorkflowHelper\Order\SingleActionMenu $singleActionMenu **/
         $singleActionMenu = resolve(SingleActionMenu::class);
         $singleActionMenu
             ->setEngineRegistryId($engineRegistryId)

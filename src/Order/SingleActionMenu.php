@@ -1,9 +1,9 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order;
+namespace Betalabs\EngineWorkflowHelper\Order;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractActionMenu;
+use Betalabs\EngineWorkflowHelper\AbstractActionMenu;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
 
 class SingleActionMenu extends AbstractActionMenu

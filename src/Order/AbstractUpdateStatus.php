@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order;
+namespace Betalabs\EngineWorkflowHelper\Order;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractWorkflow;
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Traits\SetEventByName;
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Traits\SetOrderStatusParameters;
+use Betalabs\EngineWorkflowHelper\AbstractWorkflow;
+use Betalabs\EngineWorkflowHelper\Traits\SetEventByName;
+use Betalabs\EngineWorkflowHelper\Traits\SetOrderStatusParameters;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
 
 abstract class AbstractUpdateStatus extends AbstractWorkflow

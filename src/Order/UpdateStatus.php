@@ -1,6 +1,6 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order;
+namespace Betalabs\EngineWorkflowHelper\Order;
 
 class UpdateStatus extends AbstractUpdateStatus
 {

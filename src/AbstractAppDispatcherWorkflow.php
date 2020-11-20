@@ -1,9 +1,9 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper;
+namespace Betalabs\EngineWorkflowHelper;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Traits\SetEventByName;
+use Betalabs\EngineWorkflowHelper\Traits\SetEventByName;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
 use Illuminate\Support\Collection;
 
@@ -107,7 +107,7 @@ abstract class AbstractAppDispatcherWorkflow extends AbstractWorkflow
 
     /**
      * @param string $eventName
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractAppDispatcherWorkflow
+     * @return \Betalabs\EngineWorkflowHelper\AbstractAppDispatcherWorkflow
      */
     public function setEventName(string $eventName): AbstractAppDispatcherWorkflow
     {

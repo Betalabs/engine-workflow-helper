@@ -1,6 +1,6 @@
 <?php
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\SingleActionMenu;
+use Betalabs\EngineWorkflowHelper\Product\SingleActionMenu;
 use Betalabs\EngineWorkflowHelper\Tests\AbstractActionMenu;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Step\Creator as StepCreator;
 use Facades\Betalabs\EngineWorkflowHelper\Event\Indexer as EventIndexer;
@@ -46,7 +46,7 @@ class SingleActionMenuTest extends AbstractActionMenu
 
         $this->mockWorkflowUpdater($workflow, $step);
 
-        /** @var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\SingleActionMenu $singleActionMenu**/
+        /** @var \Betalabs\EngineWorkflowHelper\Product\SingleActionMenu $singleActionMenu**/
         $singleActionMenu = resolve(SingleActionMenu::class);
         $singleActionMenu->setName($name)
             ->setEngineRegistryId(1)

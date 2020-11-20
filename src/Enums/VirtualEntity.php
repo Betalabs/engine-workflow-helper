@@ -1,6 +1,6 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Enums;
+namespace Betalabs\EngineWorkflowHelper\Enums;
 
 class VirtualEntity
 {

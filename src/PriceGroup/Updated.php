@@ -1,9 +1,9 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\PriceGroup;
+namespace Betalabs\EngineWorkflowHelper\PriceGroup;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractPriceGroup;
+use Betalabs\EngineWorkflowHelper\AbstractPriceGroup;
 
 class Updated extends AbstractPriceGroup
 {

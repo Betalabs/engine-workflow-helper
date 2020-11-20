@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product;
+namespace Betalabs\EngineWorkflowHelper\Product;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractActionMenu;
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Enums\VirtualEntity;
+use Betalabs\EngineWorkflowHelper\AbstractActionMenu;
+use Betalabs\EngineWorkflowHelper\Enums\VirtualEntity;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
 
 class SingleActionMenu extends AbstractActionMenu

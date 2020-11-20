@@ -1,9 +1,9 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper;
+namespace Betalabs\EngineWorkflowHelper;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Enums\VirtualEntity;
+use Betalabs\EngineWorkflowHelper\Enums\VirtualEntity;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowConditionApproach;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowConditionOperator;
 
@@ -35,7 +35,7 @@ abstract class AbstractActionMenu extends AbstractWorkflow
 
     /**
      * @param int $engineRegistryId
-     * @return \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractActionMenu
+     * @return \Betalabs\EngineWorkflowHelper\AbstractActionMenu
      */
     public function setEngineRegistryId(int $engineRegistryId): AbstractActionMenu
     {

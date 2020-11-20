@@ -2,7 +2,7 @@
 namespace Betalabs\EngineWorkflowHelper\Tests\Product;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\MultipleActionMenu;
+use Betalabs\EngineWorkflowHelper\Product\MultipleActionMenu;
 use Betalabs\EngineWorkflowHelper\Tests\AbstractActionMenu;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Step\Creator as StepCreator;
 use Facades\Betalabs\EngineWorkflowHelper\Event\Indexer as EventIndexer;
@@ -45,7 +45,7 @@ class MultipleActionMenuTest extends AbstractActionMenu
 
         $this->mockWorkflowUpdater($workflow, $step);
 
-        /** @var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product\MultipleActionMenu $multipleActionMenu**/
+        /** @var \Betalabs\EngineWorkflowHelper\Product\MultipleActionMenu $multipleActionMenu**/
         $multipleActionMenu = resolve(MultipleActionMenu::class);
         $multipleActionMenu->setName($name)
             ->setEngineRegistryId(1)

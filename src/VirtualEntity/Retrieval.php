@@ -1,6 +1,6 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\VirtualEntity;
+namespace Betalabs\EngineWorkflowHelper\VirtualEntity;
 
 
 use Betalabs\EngineWorkflowHelper\AbstractIndexer;

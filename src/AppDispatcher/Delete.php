@@ -1,9 +1,9 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AppDispatcher;
+namespace Betalabs\EngineWorkflowHelper\AppDispatcher;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\AbstractAppDispatcherWorkflow;
+use Betalabs\EngineWorkflowHelper\AbstractAppDispatcherWorkflow;
 
 abstract class Delete extends AbstractAppDispatcherWorkflow
 {

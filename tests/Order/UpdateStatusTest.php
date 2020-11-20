@@ -3,12 +3,12 @@
 namespace Betalabs\EngineWorkflowHelper\Tests\Order;
 
 
-use Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order\UpdateStatus;
+use Betalabs\EngineWorkflowHelper\Order\UpdateStatus;
 use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
 use Betalabs\EngineWorkflowHelper\Tests\AbstractWorkflow;
 use Illuminate\Foundation\Testing\WithFaker;
-use Facades\Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\VirtualEntity\Retrieval as VirtualEntityRetrieval;
-use Facades\Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Structure\Retrieval as StructureRetrieval;
+use Facades\Betalabs\EngineWorkflowHelper\VirtualEntity\Retrieval as VirtualEntityRetrieval;
+use Facades\Betalabs\EngineWorkflowHelper\Structure\Retrieval as StructureRetrieval;
 use Facades\Betalabs\EngineWorkflowHelper\Workflow\Step\Creator as StepCreator;
 
 class UpdateStatusTest extends AbstractWorkflow
@@ -63,7 +63,7 @@ class UpdateStatusTest extends AbstractWorkflow
 
         $this->mockWorkflowUpdater($workflow, $step);
 
-        /**@var \Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Order\UpdateStatus $updateStatus**/
+        /**@var \Betalabs\EngineWorkflowHelper\Order\UpdateStatus $updateStatus**/
         $updateStatus = resolve(UpdateStatus::class);
         $updateStatus->setOrderStatus($orderStatus)
             ->setEventName($eventName)

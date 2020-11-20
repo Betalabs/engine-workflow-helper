@@ -1,6 +1,6 @@
 <?php
 
-namespace Betalabs\EngineWorkflowHelper\EngineWorkflowHelper\Product;
+namespace Betalabs\EngineWorkflowHelper\Product;
 
 class StockRemoved extends AbstractStock
 {

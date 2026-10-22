@@ -37,11 +37,15 @@ abstract class WorkflowSender
      */
     protected $stepCreator;
     /**
-     * @var \Illuminate\Support\Collection
+     * Engine event returned by the API (object with id, params, ...)
+     *
+     * @var \stdClass
      */
     protected $event;
     /**
-     * @var \Illuminate\Support\Collection
+     * Engine listener returned by the API (object with id, params, ...)
+     *
+     * @var \stdClass
      */
     protected $listener;
     /**

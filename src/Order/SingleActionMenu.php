@@ -18,7 +18,7 @@ class SingleActionMenu extends AbstractActionMenu
      */
     protected $entity = 'order';
     /**
-     * @var string
+     * @var string|null
      */
     private $endpointSuffix;
 

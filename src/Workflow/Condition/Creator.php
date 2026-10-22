@@ -25,11 +25,15 @@ class Creator extends AbstractCreator
      */
     private $value;
     /**
-     * @var WorkflowConditionOperator
+     * One of the WorkflowConditionOperator values
+     *
+     * @var string
      */
     private $operator;
     /**
-     * @var WorkflowConditionApproach
+     * One of the WorkflowConditionApproach values
+     *
+     * @var string
      */
     private $approach;
 

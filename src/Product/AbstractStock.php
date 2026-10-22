@@ -10,7 +10,7 @@ abstract class AbstractStock extends AbstractWorkflow
 {
     use SetEventByName;
     /**
-     * @var string
+     * @var string|null
      */
     protected $endpoint;
     /**

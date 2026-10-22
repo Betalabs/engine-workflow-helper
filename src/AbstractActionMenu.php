@@ -15,11 +15,11 @@ abstract class AbstractActionMenu extends AbstractWorkflow
     protected $engineRegistryId;
 
     /**
-     * @var string
+     * @var string|null
      */
     protected $endpoint;
     /**
-     * @var string
+     * @var string|null
      */
     protected $entity;
 

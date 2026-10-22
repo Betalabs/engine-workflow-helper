@@ -16,12 +16,12 @@ trait SetOrderStatusParameters
     protected function setOrderStatusParameters(): void
     {
         /**
-         * @var $structureRetrieval \Betalabs\EngineWorkflowHelper\VirtualEntity\Retrieval
+         * @var \Betalabs\EngineWorkflowHelper\Structure\Retrieval $structureRetrieval
          */
         $structureRetrieval = resolve(StructureRetrieval::class);
 
         /**
-         * @var $virtualEntityRetrieval \Betalabs\EngineWorkflowHelper\Structure\Retrieval
+         * @var \Betalabs\EngineWorkflowHelper\VirtualEntity\Retrieval $virtualEntityRetrieval
          */
         $virtualEntityRetrieval = resolve(VirtualEntityRetrieval::class);
 

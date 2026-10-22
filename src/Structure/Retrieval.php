@@ -14,7 +14,7 @@ class Retrieval extends AbstractIndexer
      */
     protected $exceptionMessage = 'Structure could not be retrieved.';
     /**
-     * @var
+     * @var string|null
      */
     private $endpoint;
 

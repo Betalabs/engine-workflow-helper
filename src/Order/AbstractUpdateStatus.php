@@ -26,11 +26,15 @@ abstract class AbstractUpdateStatus extends AbstractWorkflow
      */
     private $virtualEntityRecordStatusId;
     /**
-     * @var int
+     * Numeric id taken from the extra field key (string)
+     *
+     * @var string
      */
     private $orderStatusFormId;
     /**
-     * @var int
+     * Numeric id taken from the extra field key (string)
+     *
+     * @var string
      */
     private $orderStatusExtraFieldId;
     /**

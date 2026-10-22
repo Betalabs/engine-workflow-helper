@@ -12,7 +12,7 @@ use Betalabs\EngineWorkflowHelper\Enums\WorkflowStepApproach;
 abstract class AbstractProduct extends AbstractWorkflow
 {
     /**
-     * @var string
+     * @var string|null
      */
     protected $endpoint;
     /**

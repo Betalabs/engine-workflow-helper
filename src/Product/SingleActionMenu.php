@@ -21,7 +21,7 @@ class SingleActionMenu extends AbstractActionMenu
     protected $entity = VirtualEntity::ITEM_SLUG;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $endpointSuffix;
 

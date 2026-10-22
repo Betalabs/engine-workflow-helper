@@ -21,7 +21,7 @@ abstract class AbstractAppDispatcherWorkflow extends AbstractWorkflow
      */
     protected $eventName;
     /**
-     * @var \Illuminate\Support\Collection;
+     * @var \Illuminate\Support\Collection
      */
     protected $eventParams;
     /**
@@ -33,7 +33,7 @@ abstract class AbstractAppDispatcherWorkflow extends AbstractWorkflow
      */
     protected $appUriParam;
     /**
-     * @var \Illuminate\Support\Collection;
+     * @var \Illuminate\Support\Collection
      */
     protected $listenerParams;
     /**
